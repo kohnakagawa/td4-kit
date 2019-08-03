@@ -13,7 +13,7 @@ class Top extends Module {
   io.success := DontCare
 
   val cpu = Module(new Td4())
-  val mem = Module(new InstMemory("test.bin"))
+  val mem = Module(new InstMemory("src/test/resources/raw/test.txt"))
 
   mem.io.read_addr := cpu.io.core_io.read_addr
   cpu.io.core_io.read_data := mem.io.read_data
